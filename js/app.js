@@ -75,7 +75,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         views: {
             'menuContent': {
                 templateUrl: 'templates/mysalon.html',
-                controller: 'MySalonCtrl'
+                // controller: 'MysalonCtrl'
             }
         }
     })
@@ -124,7 +124,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         views: {
             'menuContent': {
                 templateUrl: 'templates/myprofile.html',
-                controller: 'MyProfileCtrl'
+                // controller: 'MysalonCtrl'
             }
         }
     })

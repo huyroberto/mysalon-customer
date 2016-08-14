@@ -10,9 +10,9 @@
 </style>
 <ion-view hide-tabs ion-side-menu-content drag-content="toggledrag">
    <ion-content>
-    <form style="height: 100%; background: #fff;">
+    <form ng-hide="islogin" style="height: 100%; background: #fff;">
         <div class="login-header" style="margin-top:-30px; padding-top:10px;">  
-            {{app_tile}}
+            My Salon
         </div>
             <h4 style="color:#fff; text-align:center; padding-top:10px;  margin-top:30px">
                 <img src="img/logo.png" style="width:120px;">     
@@ -35,11 +35,7 @@
            </label>
         </div>
         <div class="padding" style="margin-top:-30px">
-            <center><button id="registerd" ng-click="register(user)" class="button button-balanced mdl-js-button mdl-js-ripple-effect" style="color:#fff; font-size:15px; margin-top:10px; margin-bottom:10px; background:#FF0038; text-transform:none; padding-top:0; padding-bottom:0">Register</button>
-            <a class="item" href='#/app/login' style="color:#000; text-decoration: underline; text-align:center; margin-top:-15px; border:none">
-                Are you registed?
-                </a>
-            </center>
+            <center><button id="registerd" ng-click="register(user)" class="button button-balanced mdl-js-button mdl-js-ripple-effect" style="color:#fff; font-size:15px; margin-top:10px; margin-bottom:10px; background:#FF0038; text-transform:none; padding-top:0; padding-bottom:0">Register</button></center>
         </div>
     </form>
 </ion-content>
