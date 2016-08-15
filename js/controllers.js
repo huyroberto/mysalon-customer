@@ -124,6 +124,21 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             });
             };
     })
+    .controller('QRCtrl', function ($scope, $timeout, $ionicScrollDelegate) {
+        $scope.QR = true;
+        $scope.hide = function () {
+            $scope.QR = true;
+        };
+        $scope.show = function () {
+            $scope.QR = false;
+        };
+    })
+     .controller('ShakeCtrl', function ($scope, $timeout, $ionicScrollDelegate) {
+        $scope.shake = true;
+        $scope.hide = function () {
+            $scope.shake = false;
+        };
+    })
     .controller('ChatCtrl', function($scope, $timeout, $ionicScrollDelegate) {
         })
     .controller('HomeCtrl', function ($scope, $state, $window, $rootScope, $stateParams) {

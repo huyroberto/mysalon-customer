@@ -119,6 +119,37 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             }
         }
     })
+
+    .state('app.qr', {
+        url: '/qr-code',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/add-client/qr.html',
+                controller: 'QRCtrl'
+            }
+        }
+    })
+
+    .state('app.shake', {
+        url: '/shake',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/add-client/shake.html',
+                controller: 'ShakeCtrl'
+            }
+        }
+    })
+
+    .state('app.reservation', {
+        url: '/reservation',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/add-client/reservation.html',
+                // controller: 'ReservationCtrl'
+            }
+        }
+    })
+
     .state('app.myprofile', {
         url: '/my-profile',
         views: {
