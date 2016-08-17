@@ -1,0 +1,136 @@
+<style>
+    .item-radio input:checked + .radio-content .item-content {
+    /* style the item content when its checked */
+    background: #fff;
+    }
+</style>
+<ion-view title="My Salon" hide-back-button="false">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear" menu-toggle="left">
+            <img src="img/dm.png">
+        </button>
+    </ion-nav-buttons>
+    <ion-content scroll="true">
+        <!--<div class="login-header" style="padding-top:10px;">  
+                    My Salon
+                </div>-->
+                <div class="list">
+                    <a class="item item-thumbnail-left" href="#" style="height:125px">
+                        <img src="img/nana.jpeg" style="border-radius:0; max-height:100px">
+                        <center>
+                            <h2 style="font-weight:600; text-transform: capitalize;">{{user_profile.name}}</h2>
+                            <p style="text-transform: capitalize; font-size: small;">{{user_profile.name}}</p>
+                            <div class="row" style="padding-top:0">
+                                <div class="col">
+                                    <h2 style="margin-bottom:0"><i ng-style="menu" class="icon ion-ios-list-outline" style="font-size:35px; color:red"></i></h2>
+                                    <p style="font-size: smaller;">Select Menu</p>
+                                </div>
+                                <i class="ion-arrow-right-a" style="font-size:18px; color:#909090; margin-top:20px"></i>
+                                <div class="col">
+                                    <h2 style="margin-bottom:0"><i ng-style="day" class="icon ion-ios-calendar-outline" style="font-size:35px; color:#909090"></i></h2>
+                                    <p style="font-size: smaller;">Select Day</p>
+                                </div>
+                                <i class="ion-arrow-right-a" style="font-size:18px; color:#909090; margin-top:20px"></i>
+                                <div class="col">
+                                    <h2 style="margin-bottom:0"><i ng-style="check" class="icon ion-android-done" style="font-size:35px; color:#909090"></i></h2>
+                                    <p style="font-size: smaller;">Confirm</p>
+                                </div>
+                            </div>
+                        </center>  
+                  </a>
+                  <div class="row" style="padding-top:0; margin-bottom:0">
+                            <div class="col"></div>
+                            <div class="col"></div>
+                            <div class="col">
+                                <a ng-show="confirm1" ng-href="#/app/confirm" class="button waves-effect waves-light button-full button-assertive" style="padding-left:0px; padding-right:0px; margin-top:0; width:95%; min-height:30px; line-height:30px; text-transform:none; color:#fff; font-size:17px; text-align:center; background:#FF0038; box-shadow:none; border:1px solid #E0E0E0;" ng-click="hide1(); menu={color:'#909090'}; day={color:'red'}">Next</a> 
+
+                                <a ng-show="confirm2" ng-href="#/app/confirm" class="button waves-effect waves-light button-full button-assertive" style="padding-left:0px; padding-right:0px; margin-top:0; width:95%; min-height:30px; line-height:30px; text-transform:none; color:#fff; font-size:17px; text-align:center; background:#FF0038; box-shadow:none; border:1px solid #E0E0E0;" ng-click="hide2(); day={color:'#909090'}; check={color:'red'}">Next</a> 
+                            </div>
+                        </div>
+                </div>
+            
+            <div id="1" ng-show="confirm1">
+                <ul class="list" style="margin-bottom:0; width:110%">
+                    <li class="item item-toggle" style="background:red; color:#fff; font-size:18px; font-weight:600; padding-top:12px; padding-bottom:10px">
+                        Select Menu
+                    </li>
+                </ul>
+                <div  style="height:15%; background:#F5F5F5; padding-top:2%; padding-left:5%; padding-bottom:3%; border-bottom: 1px solid #E3E2E5;font-size:19px;">
+                                Hair cut
+                </div>
+                <ion-list id="cut" ng-click="showtotal()">
+                <ion-radio style="border-bottom:1px solid #E3E2E5; font-size:17px">
+                    Cut <span style="float:right">Y5,400 &nbsp 30 min</span>
+                </ion-radio>
+                <ion-radio style="border-top:1px solid #E3E2E5; border-bottom:1px solid #E3E2E5; font-size:17px">
+                    Kids cut <span style="float:right">Y2,400 &nbsp 30 min</span>
+                </ion-radio>
+                </ion-list>
+
+                <div  style="height:15%; background:#F5F5F5; padding-top:2%; padding-left:5%; padding-bottom:3%; border-bottom: 1px solid #E3E2E5;font-size:19px;">
+                                Color
+                </div>
+
+                <ion-list id="color" ng-click="showtotal()">
+                <ion-radio  style="border-bottom:1px solid #E3E2E5; font-size:17px">
+                    Color <span style="float:right">Y10,800 &nbsp 90 min</span>
+                </ion-radio>
+                <ion-radio style="border-top:1px solid #E3E2E5; border-bottom:1px solid #E3E2E5; font-size:17px">
+                    Highlights <span style="float:right">Y12,500 &nbsp 120 min</span>
+                </ion-radio>
+                </ion-list>
+
+                <div ng-show="total" id="total">
+                    <ul class="list" style="margin-bottom:0; width:110%">
+                        <li class="item item-toggle" style="background:#6E6E6E; color:#fff; font-size:18px; font-weight:600; padding-top:10px; padding-bottom:0px; min-height:40px;">
+                            Select Menu
+                        </li>
+                    </ul>
+                    <div class="list" style="margin-bottom:0px">
+                                <a class="item item-icon-right as" href="#" style="border-bottom:1px solid #E3E2E5; font-size: 17px; font-weight: 100;">
+                                    <i hidden></i>
+                                    Cut
+                                    <i><span style="float:right">Y5,400 &nbsp 30 min</span></i>
+                                </a>
+
+                                <a class="item item-icon-right as" href="#" style="border-bottom:1px solid #E3E2E5; font-size: 17px; font-weight: 100;">
+                                    Color
+                                    <i><span style="float:right">Y10,800 &nbsp 90 min</span></i>
+                                </a>
+                    </div>
+                    <ul class="list" style="margin-bottom:50px; width:110%">
+                        <li class="item item-toggle" style="background:#6E6E6E; color:#fff; font-size:18px; font-weight:600; padding-top:10px; padding-bottom:0px; min-height:40px;">
+                             Total (approx.) <span style="float:right">Y16,200 &nbsp 120 min</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div ng-show="confirm2">
+                <ul class="list" style="margin-bottom:0px; width:110%">
+                        <li class="item item-toggle" style="background:#6E6E6E; color:#fff; font-size:18px; font-weight:600; padding-top:10px; padding-bottom:0px; min-height:40px;">
+                             Total (approx.) <span style="float:right">Y16,200 &nbsp 120 min</span>
+                        </li>
+                    </ul>
+                    <div class="myCalendar" id="newcalendar" style="margin-bottom:10px;"></div>
+                    <!--<input id="basicExample" type="text" class="time" />-->
+                         <span style="margin-right: 15px; margin-left: 5px; font-size: 17px; font-weight: 500; float: left; margin-top: 10px;">Please chosse time:</span>
+                         <input id="basicExample" type="text" class="time"  style="float:left; text-align:center; border-radius:5px; color:#FF0038; font-size:25px; width: 40%; margin: auto; margin-bottom:7px; margin-top:5px; background: #fff; border:1px solid #E0E0E0"/>
+            </div>
+
+            <div ng-show="confirm3">
+                <center>
+                    <h3 style="color:red; margin-bottom:0">Your reservation is:</h2><br/>
+                   <p style="text-align:left; width:50%">
+                       <span style="font-weight:600">Salon:</span> <span style="font-weight:200">Y-Style</span><br/>
+                       <span style="font-weight:600">Address:</span> <span style="font-weight:200">Tokyo, Shibuya, Harajuku 1-2-3</span><br/>
+                       <span style="font-weight:600">Selected menu:</span> <span style="font-weight:200">Cut, Color</span><br/>
+                       <span style="font-weight:600">Total time:</span> <span style="font-weight:200">1h 30 min</span><br/>
+                   </p>
+                    <h4 style="color:red; font-weight:200">March 18, 2016 (Fri) 10:00</h3>
+                    <br/>
+                    <a class="button waves-effect waves-light button-full button-assertive" style="padding-left:0px; padding-right:0px; margin-top:0; width:30%; min-height:30px; line-height:30px; text-transform:none; color:#fff; font-size:17px; text-align:center; background:#FF0038; box-shadow:none; border:1px solid #E0E0E0;" ng-click="complete()">Comfirm</a> 
+                </center>
+            </div>
+    </ion-content>
+</ion-view>

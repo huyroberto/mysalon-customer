@@ -150,6 +150,16 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }
     })
 
+    .state('app.confirm', {
+        url: '/confirm',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/add-client/confirm.html',
+                controller: 'ConfirmCtrl'
+            }
+        }
+    })
+
     .state('app.myprofile', {
         url: '/my-profile',
         views: {

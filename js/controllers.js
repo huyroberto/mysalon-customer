@@ -139,6 +139,46 @@ app.controller('AppCtrl', function ($scope, $ionicModal, $ionicPopover, $timeout
             $scope.shake = false;
         };
     })
+    .controller('ConfirmCtrl', function ($scope, $timeout, $ionicScrollDelegate,  $ionicPopup) {
+        $scope.confirm1 = true;
+        $scope.confirm2 = false;
+        $scope.confirm3 = false;
+        $scope.total = false;
+        $scope.hide1 = function () {
+            $scope.confirm1 = false;
+            $scope.confirm2= true;
+        };
+
+        $scope.hide2 = function () {
+            $scope.confirm2= false;
+            $scope.confirm3=true;
+        };
+
+        $scope.showtotal= function(){
+            $scope.total = true;
+        }
+        $("#newcalendar").ionCalendar({
+            lang: "en",                     // language
+            sundayFirst: false,             // first week day     
+            years: "15",                    // years diapason
+            format: "DD/MM/YYYY",           // date format
+            onClick: function (date) {        // click on day returns date
+                console.log(date);
+            }
+        });
+        $('#basicExample').timepicker();
+
+        $scope.complete = function() {
+            var alertPopup = $ionicPopup.alert({
+                title: '<b>Thank You <br/> for your reservation!</b>',
+                template: '<center>You can edit/delete this reservation<br/> from "My Profile"</center>'
+            });
+
+            alertPopup.then(function(res) {
+                console.log('Thank you for not eating my delicious ice cream cone');
+            });
+            };
+    })
     .controller('ChatCtrl', function($scope, $timeout, $ionicScrollDelegate) {
         })
     .controller('HomeCtrl', function ($scope, $state, $window, $rootScope, $stateParams) {
