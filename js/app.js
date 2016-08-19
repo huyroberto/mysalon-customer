@@ -110,6 +110,36 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }
     })
 
+    .state('app.terms', {
+        url: '/terms-of-use',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/settings/termsofuse.html',
+                // controller: 'TermCtrl'
+            }
+        }
+    })
+
+    .state('app.privacy', {
+        url: '/privacy-policy',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/settings/privacypolicy.html',
+                // controller: 'TermCtrl'
+            }
+        }
+    })
+
+    .state('app.question', {
+        url: '/ask-question',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/settings/question.html',
+                // controller: 'TermCtrl'
+            }
+        }
+    })
+
     .state('app.addclient', {
         url: '/add-client',
         views: {

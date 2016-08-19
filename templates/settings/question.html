@@ -1,0 +1,47 @@
+<style>
+    .mesager::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #C8C8CD;
+}
+.mesager::-moz-placeholder { /* Firefox 19+ */
+  color: #C8C8CD;
+}
+.mesager:-ms-input-placeholder { /* IE 10+ */
+  color: #C8C8CD;
+}
+.mesager:-moz-placeholder { /* Firefox 18- */
+  color: #C8C8CD;
+}
+</style>
+<ion-view  title="<center>Ask about My Salon</center>" hide-back-button="false">
+    <ion-nav-buttons side="right">
+      <button style="color:#FF0038; font-size:17px">
+        Send
+      </button>
+    </ion-nav-buttons>
+   <ion-content scroll="true">
+                <div class="list">
+                    
+                    <a class="item item-icon-right" href="#" style="border-bottom:1px solid #DCDCDF; padding:5px">
+                         <label class="item item-input">
+                            To: <input type="text" class="mesager" style="margin-left:5px;" placeholder="@email.com">
+                        </label>
+                        <i class="icon ion-ios-plus-outline" style="color:#3998FF"></i>
+                    </a>
+
+                    <a class="item item-icon-left item-icon-right" href="#" style="border-bottom:1px solid #DCDCDF; padding:5px">
+                         <label class="item item-input">
+                         Cc/Bcc, From: <input class="mesager" type="text" style="margin-left:5px;" placeholder="hello@mercury.io">
+                        </label>
+                    </a>
+
+                    <a class="item item-icon-left" href="#" style="border-bottom:1px solid #DCDCDF; padding:5px">
+                         <label class="item item-input">
+                            To: <input type="text" class="mesager" style="margin-left:5px;" value="Ask about My Salon">
+                            </label>
+                    </a>
+                    <textarea rows="4" cols="50" style="margin-left:5px; margin-right:5px; margin-top:20px">
+                    Send from my Lumia phone
+                    </textarea>
+                    </div>
+</ion-content>
+</ion-view>
